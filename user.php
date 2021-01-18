@@ -17,7 +17,15 @@ class User{
         if(is_numeric($_age) && $_age > 14 && $_age < 120){
             $this->age = $_age;
         } else {
-            throw new Exception ("Età inserita non valida!");
+            throw new Exception ("Età inserita non valida!<br>");
+        };
+    }
+
+    public function setPassword($_password){
+        if(strlen($_password) > 8){
+            $this->password = strval($_password);
+        } else {
+            throw new Exception ("Password inserita non valida! <br>");
         };
     }
 
